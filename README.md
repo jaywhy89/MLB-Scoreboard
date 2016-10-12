@@ -3,7 +3,8 @@ First web application with Angular.
 
 It displays MLB scoreboard with team names and scores for each of the games on a given day.
 
-
+Usage
+-----
 
 
 ####There are 4 panels, which are rendered in single index.html and they are controlled by angular directives.
