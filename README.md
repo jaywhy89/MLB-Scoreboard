@@ -5,6 +5,7 @@ It displays MLB scoreboard with team names and scores for each of the games on a
 
 There are 4 panels
  - Date Selector 
+ 
 ![date selector](https://cloud.githubusercontent.com/assets/19979045/19325565/bf167b2e-9094-11e6-93bd-4204807434de.png)
 
  - Favourite Team
