@@ -1,7 +1,7 @@
 app.controller('DateController', function($scope, jsonUrl) {
 
 	$scope.currentTab=-1;
-	$scope.favouriteTeam = "Blue Jays"
+	$scope.favouriteTeam = "Blue Jays";
 	$scope.setDate = function() {
 		$scope.year = $scope.newDate.getFullYear();
 		$scope.month = $scope.newDate.getMonth()+1;
@@ -31,8 +31,8 @@ app.controller('DateController', function($scope, jsonUrl) {
 		return (game.home_team_name !== $scope.favouriteTeam) && (game.away_team_name !== $scope.favouriteTeam);
 	};
 
-	$scope.activateTab = function($index) {
-		$scope.currentTab = $index;
+	$scope.activateTab = function(clickedGame) {
+		$scope.currentTab = $scope.myData.game.indexOf(clickedGame);
 		$scope.setInningSize();
 	}
 
@@ -56,4 +56,5 @@ app.controller('DateController', function($scope, jsonUrl) {
 	$scope.setFavouriteTeam = function(teamName) {
 		$scope.favouriteTeam = teamName;
 	}
+
 });

@@ -1,7 +1,6 @@
 app.factory("jsonUrl", function ($http){
 	var data = {
 		url: "",
-		obj: {}
 	};
 	return {
 		setUrl: function(year, month, date) {
@@ -10,9 +9,6 @@ app.factory("jsonUrl", function ($http){
 		},
 		getPromise: function() {
 			return $http.get(data.url);
-		},
-		getUrl: function() {
-			return data.url;
 		}
 	}
 });
