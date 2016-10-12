@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ScoreBoard">
+	<head>
+		<meta charset="utf-8">
+		<title>Hello World</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+		<script src="javascript/app.js"></script>
+		<script src="javascript/controller.js"></script>
+		<script src="javascript/service.js"></script>
+		<script src="javascript/filter.js"></script>
+	</head>
+	<body>
+
+	<header>
+		<h1 align="center" >MLB Scoreboard</h1>
+	</header>
+	
+	
+	<div ng-controller="DateController">
+	<form ng-submit="setFavouriteTeam()">
+		<button class="pull-right">Fav Team</button>
+	</form>
+	<form ng-submit="setDate()">
+	<label for="matchdate">	Select a match date	</label>
+	<input class="form-control" type="date" id="matchdate" ng-model="newDate" name="matchdate" max="2016-10-12" />
+	<input type="submit" value="Submit" /> 
+	</form>
+	<button class="pull-right" ng-click="nextDate()">Next Day</button>
+	<button class="pull-right" ng-click="prevDate()">Prev Day</button>
+
+	<div ng-hide="currentTab != -1">
+	<p class="h3" align="middle" ng-if="gameOccured">{{newDate.toDateString()}}</p>
+	<p class="h2" align="middle" ng-if="gameOccured==false"><B>No match</B> on {{newDate.toDateString()}}</p>
+
+	<table class="table table-hover" ng-if="!multiple && gameOccured">
+	<tbody>
+		<tr ng-click="activateTabSingle()">
+			<th>
+				{{myData.game.home_team_name}}<br>
+				{{myData.game.away_team_name}}<br>
+				Status: {{myData.game.status.status}}
+			</th>
+			<td>
+				{{myData.game.linescore.r.home}}<br>{{myData.game.linescore.r.away}}
+			</td>
+		</tr>
+	</tbody>
+	</table>
+	
+
+	<table class="table table-hover" ng-if="multiple && gameOccured">
+	<tbody ng-repeat="game in myData.game | orderBy:favTeamFirst">
+		<tr ng-click="activateTab($index)">
+			<th>
+				{{game.home_team_name}}<br>
+				{{game.away_team_name}}<br>
+				Status: {{game.status.status}}
+			</th>
+			<td>
+				{{game.linescore.r.home}}<br>{{game.linescore.r.away}}
+			</td>
+		</tr>
+	</tbody>
+	</table>
+	</div>
+
+	<div ng-if="currentTab!=-1">
+	<table class="table">
+		<thead>
+			<th>Inning #</th>
+			<th  ng-repeat="n in [] | range:inningSize">
+				{{n+1}}
+			</th>
+			<th>R</th>
+			<th>H</th>
+			<th>E</th>
+		</thead>
+		<tbody>
+			<tr>
+				<th>{{myData.game[currentTab].home_team_name}}
+					{{myData.game.home_team_name}}</th>
+				<td ng-repeat="n in [] | range:inningSize">
+					{{myData.game[currentTab].linescore.inning[n].home}}
+					{{myData.game.linescore.inning[n].home}}</td>
+				<th>{{myData.game[currentTab].linescore.r.home}}
+					{{myData.game.linescore.r.home}}</th>
+				<td>{{myData.game[currentTab].linescore.h.home}}
+					{{myData.game.linescore.h.home}}</td>
+				<td>{{myData.game[currentTab].linescore.e.home}}
+					{{myData.game.linescore.e.home}}</td>
+			</tr>
+			<tr>
+				<th>{{myData.game[currentTab].away_team_name}}
+					{{myData.game.away_team_name}}</th>
+				<td ng-repeat="n in [] | range:inningSize">
+					{{myData.game[currentTab].linescore.inning[n].away}}
+					{{myData.game.linescore.inning[n].away}}</td>
+				<th>{{myData.game[currentTab].linescore.r.away}}
+					{{myData.game.linescore.r.away}}</th>
+				<td>{{myData.game[currentTab].linescore.h.away}}
+					{{myData.game.linescore.h.away}}</td>
+				<td>{{myData.game[currentTab].linescore.e.away}}
+					{{myData.game.linescore.e.away}}</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="wrapper">
+	<section>
+		<button type="button" class="btn btn-primary btn-md" ng-click="toMainView()">Back to Dayview</button>
+	</section>
+	</div>
+	</div>
+
+	</div>
+	
+	</body>
+
+</html>
