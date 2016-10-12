@@ -16,7 +16,7 @@ Running without local server
 * [Angular](https://angularjs.org/)
 
 
-### Structure
+## Structure
 There are 4 sections in single index.html and they are controlled by angular directives.
 
 ## 1. Date Selector 
