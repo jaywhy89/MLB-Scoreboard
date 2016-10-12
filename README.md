@@ -5,7 +5,7 @@ It displays MLB scoreboard with team names and scores for each of the games on a
 
 There are 4 panels
  - Date Selector 
- ![alt tag](http://imgur.com/5bZYSky)
+![date selector](https://cloud.githubusercontent.com/assets/19979045/19325278/6aae7baa-9093-11e6-8f3c-f557a82c7416.png)
  - Favourite Team
  ![alt tag](http://imgur.com/vSCeZBy)
  - Dayview (List)
