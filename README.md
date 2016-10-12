@@ -5,9 +5,19 @@ It displays MLB scoreboard with team names and scores for each of the games on a
 
 Usage
 -----
+1.  Running with local server
+- Open /MLB Scoreboard (Server)/index.html
+
+2.  Running without local server
+- Open /MLB Scoreboard (No Server)/index.html
+
+## Built With
+
+* [Angular](https://angularjs.org/)
 
 
-####There are 4 panels, which are rendered in single index.html and they are controlled by angular directives.
+#### Sections
+There are 4 sections in single index.html and they are controlled by angular directives.
 
 ## 1. Date Selector 
 ![date selector](https://cloud.githubusercontent.com/assets/19979045/19325565/bf167b2e-9094-11e6-93bd-4204807434de.png)
