@@ -1,0 +1,7 @@
+<form ng-submit="setDate()">
+   <label for="matchdate" ">	Select a match date	</label>
+   <input class="form-control" type="date" id="matchdate" ng-model="newDate" name="matchdate" max="2016-10-12" />
+   <input type="submit" value="Submit" /> 
+</form>
+<button class="pull-right" ng-click="nextDate()">Next Day</button>
+<button class="pull-right" ng-click="prevDate()">Prev Day</button>

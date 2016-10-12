@@ -1,0 +1,56 @@
+<div ng-if="currentTab!=-1">
+   <table class="table">
+      <thead>
+         <th>Inning #</th>
+         <th  ng-repeat="n in [] | range:inningSize">
+            {{n+1}}
+         </th>
+         <th>R</th>
+         <th>H</th>
+         <th>E</th>
+      </thead>
+      <tbody>
+         <tr>
+            <th>{{myData.game[currentTab].home_team_name}}
+               {{myData.game.home_team_name}}
+            </th>
+            <td ng-repeat="n in [] | range:inningSize">
+               {{myData.game[currentTab].linescore.inning[n].home}}
+               {{myData.game.linescore.inning[n].home}}
+            </td>
+            <th>{{myData.game[currentTab].linescore.r.home}}
+               {{myData.game.linescore.r.home}}
+            </th>
+            <td>{{myData.game[currentTab].linescore.h.home}}
+               {{myData.game.linescore.h.home}}
+            </td>
+            <td>{{myData.game[currentTab].linescore.e.home}}
+               {{myData.game.linescore.e.home}}
+            </td>
+         </tr>
+         <tr>
+            <th>{{myData.game[currentTab].away_team_name}}
+               {{myData.game.away_team_name}}
+            </th>
+            <td ng-repeat="n in [] | range:inningSize">
+               {{myData.game[currentTab].linescore.inning[n].away}}
+               {{myData.game.linescore.inning[n].away}}
+            </td>
+            <th>{{myData.game[currentTab].linescore.r.away}}
+               {{myData.game.linescore.r.away}}
+            </th>
+            <td>{{myData.game[currentTab].linescore.h.away}}
+               {{myData.game.linescore.h.away}}
+            </td>
+            <td>{{myData.game[currentTab].linescore.e.away}}
+               {{myData.game.linescore.e.away}}
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <div class="wrapper">
+      <section>
+         <button type="button" class="btn btn-primary btn-md" ng-click="toMainView()">Back to Dayview</button>
+      </section>
+   </div>
+</div>

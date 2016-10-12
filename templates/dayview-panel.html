@@ -1,0 +1,32 @@
+<div ng-hide="currentTab != -1">
+   <p class="h3" align="middle" ng-if="gameOccured">{{newDate.toDateString()}}</p>
+   <p class="h2" align="middle" ng-if="gameOccured==false"><B>No match</B> on {{newDate.toDateString()}}</p>
+   <table class="table table-hover" ng-if="!multiple && gameOccured">
+      <tbody>
+         <tr ng-click="activateTabSingle()">
+            <th>
+               {{myData.game.home_team_name}}<br>
+               {{myData.game.away_team_name}}<br>
+               Status: {{myData.game.status.status}}
+            </th>
+            <td>
+               {{myData.game.linescore.r.home}}<br>{{myData.game.linescore.r.away}}
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <table class="table table-hover" ng-if="multiple && gameOccured">
+      <tbody ng-repeat="game in myData.game | orderBy:favTeamFirst">
+         <tr ng-click="activateTab(game)">
+            <th>
+               {{game.home_team_name}}<br>
+               {{game.away_team_name}}<br>
+               Status: {{game.status.status}}
+            </th>
+            <td>
+               {{game.linescore.r.home}}<br>{{game.linescore.r.away}}
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div>
