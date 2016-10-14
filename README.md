@@ -15,6 +15,9 @@ Open /MLB_Scoreboard(NoServer)/index.html
 
 * [Angular](https://angularjs.org/)
 
+## Requirements
+HTML5 Browser
+
 
 ## Structure
 There are 4 sections in single index.html and they are controlled by angular directives.
