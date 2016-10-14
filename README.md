@@ -11,13 +11,13 @@ Open /MLB_Scoreboard(Server)/index.html
 Running without local server:
 Open /MLB_Scoreboard(NoServer)/index.html
 
+## Requirements
+1. HTML5 supported browser
+2. Local server (required to use angular directives)
+
 ## Built With
 
 * [Angular](https://angularjs.org/)
-
-## Requirements
-HTML5 Browser
-
 
 ## Structure
 There are 4 sections in single index.html and they are controlled by angular directives.
