@@ -6,10 +6,10 @@ It displays MLB scoreboard with team names and scores for each of the games on a
 Usage
 -----
 Running with local server:
-Open /MLB Scoreboard (Server)/index.html
+Open /MLB_Scoreboard(Server)/index.html
 
 Running without local server:
-Open /MLB Scoreboard (No Server)/index.html
+Open /MLB_Scoreboard(NoServer)/index.html
 
 ## Built With
 
