@@ -1,3 +1,18 @@
 .wrapper {
     text-align: center;
 }
+
+.selector {
+	width: 20%;
+	margin: 0 auto 0 auto;
+}
+
+.list-viewer {
+	width: 30%;
+	margin: 2% auto 0 auto;
+}
+
+.detail-viewer {
+	width: 70%;
+	margin: 5% auto 0 auto;
+}

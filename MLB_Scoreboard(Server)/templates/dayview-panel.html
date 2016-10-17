@@ -1,4 +1,4 @@
-<div ng-hide="currentTab != -1">
+<div ng-hide="currentTab != -1" class="list-viewer">
    <p class="h3" align="middle" ng-if="gameOccured">{{newDate.toDateString()}}</p>
    <p class="h2" align="middle" ng-if="gameOccured==false"><B>No match</B> on {{newDate.toDateString()}}</p>
    <table class="table table-hover" ng-if="!multiple && gameOccured">

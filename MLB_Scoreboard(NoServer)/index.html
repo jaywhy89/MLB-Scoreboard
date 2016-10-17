@@ -31,6 +31,7 @@
          </div>
 
          <!-- Date Selector Panel with prev/next day button -->
+         <div class="selector">
          <form ng-submit="setDate()">
             <label for="matchdate" ">  Select a match date  </label>
             <input class="form-control" type="date" id="matchdate" ng-model="newDate" name="matchdate" />
@@ -38,9 +39,10 @@
          </form>
          <button class="pull-right" ng-click="nextDate()">Next Day</button>
          <button class="pull-right" ng-click="prevDate()">Prev Day</button>
+         </div>
 
          <!-- Screen1. List view  -->
-         <div ng-hide="currentTab != -1">
+         <div ng-hide="currentTab != -1" class="list-viewer">
             <p class="h3" align="middle" ng-if="gameOccured">{{newDate.toDateString()}}</p>
             <p class="h2" align="middle" ng-if="gameOccured==false"><B>No match</B> on {{newDate.toDateString()}}</p>
             <table class="table table-hover" ng-if="!multiple && gameOccured">
@@ -74,7 +76,7 @@
          </div>
 
          <!-- Screen2. Detail View -->
-         <div ng-if="currentTab!=-1">
+         <div class="detail-viewer" ng-if="currentTab!=-1">
             <table class="table">
                <thead>
                   <th>Inning #</th>
